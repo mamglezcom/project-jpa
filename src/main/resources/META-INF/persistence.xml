@@ -6,6 +6,8 @@
              <persistence-unit name="persistenceMamglez">
              	<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
              	<class>com.mamglez.projectjpa.entity.Disquera</class>
+             	<class>com.mamglez.projectjpa.entity.Genero</class>
+             	<class>com.mamglez.projectjpa.entity.SubGenero</class>
              	
              	<properties>
              		<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>

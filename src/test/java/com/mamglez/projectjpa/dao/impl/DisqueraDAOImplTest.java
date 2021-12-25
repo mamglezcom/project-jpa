@@ -3,6 +3,7 @@
  */
 package com.mamglez.projectjpa.dao.impl;
 
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import java.time.LocalDateTime;
@@ -71,7 +72,22 @@ class DisqueraDAOImplTest {
 	@Test
 	void testConsultarById() {
 		Disquera disquera = this.disqueraDAO.consultarById(19L);
+		assertNotNull(disquera);
 		System.out.println("disquera: " + disquera.getDescripcion());
+	}
+	
+	@Test
+	void testConsultarByDescripcionJPQL() {
+		Disquera disquera = this.disqueraDAO.consultarByDescripcionJPQL("a tope");
+		assertNotNull(disquera);
+		System.out.println("Disquera by descripcion: " + disquera.getDescripcion());
+	}
+	
+	@Test
+	void testConsultarByDescripcionNative() {
+		Disquera disquera = this.disqueraDAO.consultarByDescripcionNative("a tope");
+		assertNotNull(disquera);
+		System.out.println("Disquera by descripcion: " + disquera.getDescripcion());
 	}
 
 }
